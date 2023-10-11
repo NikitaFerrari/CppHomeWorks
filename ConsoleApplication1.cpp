@@ -22,24 +22,24 @@ int main()
     //    cout << " error ";
 
     
-    int minutes, operrator;
-    cout << " Input minuts your phone tolking:  ";
-    cin >> minutes;
-    cout << " Input nubmer one or two or three:  ";
-    cin >> operrator;
-    if (operrator == 1) {
-        cout << minutes * 3 << " Rubels price your phone talking";
-    }
-    else if (operrator == 2) {
-        cout << minutes * 5 << " Rubels price your phone talking";
-    }
-    else if (operrator == 3) {
-        cout << minutes * 6 << " Rubels price your phone talking";
+    //int minutes, operrator;
+    //cout << " Input minuts your phone tolking:  ";             //2
+    //cin >> minutes;
+    //cout << " Input nubmer one or two or three:  ";
+    //cin >> operrator;
+    //if (operrator == 1) {
+    //    cout << minutes * 3 << " Rubels price your phone talking";
+    //}
+    //else if (operrator == 2) {
+    //    cout << minutes * 5 << " Rubels price your phone talking";
+    //}
+    //else if (operrator == 3) {
+    //    cout << minutes * 6 << " Rubels price your phone talking";
 
-    }
-    else {
-        cout << "error, invalid number";
-    }
+    //}
+    //else {
+    //    cout << "error, invalid number";
+    //}
 
 
     
