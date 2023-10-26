@@ -1,49 +1,81 @@
 ﻿
 #include <iostream>
+#include <ctime>
 
 using namespace std;
 int main()
 {
-    //char a;
-    //cout << "input symbol: ";                              //1
-    //cin >> a;
-    //if (a >= 65 && a <= 90)
-    //    cout  << a << " big english letter" ;
-    //else if (a >= 97 && a <= 122)
-    //    cout <<  a << " small english latter";
-    //else if (a >= 48 && a <= 57)
-    //    cout << a << "figure";
-    //else if (a >= 33 && a <= 39)
-    //    cout << a << "punctuation mark";
-    //else if (a >= 63 && a <= 91)
-    //    cout << a << "punctuation mark";
-
-    //else
-    //    cout << " error ";
+    srand(time(NULL));
+    int komp, player;
+    komp = 0;
+    player = 0;
+    int kamen, noz, bumaga;
+    kamen = 1;
+    noz = 2;
+    bumaga = 3;
+    int b;
+    int a;
+    while (komp <= 5 && player <= 5) {
+        srand(time(NULL));
+        cout << " input number from 1 to 3, 1-kamen, 2- noz, 3-bumaga\n";
+        cin >> a;
+        b = rand() % 4;
+        if (a == 1 && b == 2) {
+            ++player;
+            cout << komp << ':' << player << endl;
+        }
+        else if (a == 1 && b == 1) {
+            cout << "draw"<<endl;
+            cout << komp << ':' << player << endl;
+        }
+        else if (a == 1 && b == 3) {
+            ++komp;
+            cout << komp << ':' << player << endl;
+        }
+        else if (a == 2 && b == 1) {
+            ++komp;
+            cout << komp << ':' << player << endl;
+        }
+        else if (a == 2 && b == 2) {
+            cout << "draw" << endl;
+            cout << komp << ':' << player << endl;
+        }
+        else if (a == 2 && b == 3) {
+            ++player;
+            cout << komp << ':' << player << endl;
+        }
+        else if (a == 3 && b == 1) {
+            ++player;
+            cout << komp << ':' << player << endl;
+        }
+        else if (a == 3 && b == 2) {
+            ++komp;
+            cout << komp << ':' << player << endl;
+        }
+        else if (a == 3 && b == 3) {
+            cout << "draw" << endl;
+            cout << komp << ':' << player << endl;
+        }
+        else {
+            cout << "invalid number"<< endl;
+        }
+    
 
     
-    //int minutes, operrator;
-    //cout << " Input minuts your phone tolking:  ";             //2
-    //cin >> minutes;
-    //cout << " Input nubmer one or two or three:  ";
-    //cin >> operrator;
-    //if (operrator == 1) {
-    //    cout << minutes * 3 << " Rubels price your phone talking";
-    //}
-    //else if (operrator == 2) {
-    //    cout << minutes * 5 << " Rubels price your phone talking";
-    //}
-    //else if (operrator == 3) {
-    //    cout << minutes * 6 << " Rubels price your phone talking";
-
-    //}
-    //else {
-    //    cout << "error, invalid number";
-    //}
-
-
     
+ 
 
+
+    }
+    if (player == 5) {
+        cout << "You win!" << endl;
+    }
+    else {
+        cout << " You lose!:(" << endl;
+    }
+    
+ 
+    
  }
 
 
