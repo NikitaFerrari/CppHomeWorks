@@ -2,19 +2,82 @@
 //
 
 #include <iostream>
+using namespace std;
+
+void shiftEl(int array[][3], string direction, int step, int arraySize, int stringSize) {
+
+    if (direction == "left") {
+        for (int k = 0; k < step; k++) {
+            for (int i = 0; i < arraySize; i++) {
+                for (int j = 1; j < stringSize; j++) {
+                    swap(array[i][j - 1], array[i][j]);
+                }
+            }
+        }
+    }
+    else if (direction == "right") {
+        for (int k = 0; k < step; k++) {
+            for (int i = 0; i < arraySize; i++) {
+                for (int j = stringSize - 2; j >= 0; j--) {
+                    swap(array[i][j], array[i][j + 1]);
+                }
+            }
+        }
+    }
+
+    else if (direction == "up") {
+        for (int k = 0; k < step; k++) {
+            for (int i = 1; i < arraySize; i++) {
+                for (int j = 0; j < stringSize; j++) {
+                    swap(array[i][j], array[i - 1][j]);
+                }
+            }
+        }
+    }
+
+    else if (direction == "down") {
+        for (int k = 0; k < step; k++) {
+            for (int i = arraySize - 2; i >= 0; i--) {
+                for (int j = 0; j < stringSize; j++) {
+                    swap(array[i + 1][j], array[i][j]);
+                }
+            }
+        }
+    }
+
+
+    else {
+        cout << "Unknown direction.";
+        return;
+    }
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    const int arraySize = 3;
+    const int stringSize = 3;
+
+    int array[arraySize][stringSize]{ {1,2,3}, {4,5,6}, {7,8,9} };
+
+
+    string direct;
+    cin >> direct;
+
+    for (int i = 0; i < arraySize; i++) {
+        for (int j = 0; j < stringSize; j++) {
+            cout << array[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+
+    shiftEl(array, direct, 2, arraySize, stringSize);
+
+    cout << endl;
+    for (int i = 0; i < arraySize; i++) {
+        for (int j = 0; j < stringSize; j++) {
+            cout << array[i][j] << " ";
+        }
+        cout << endl;
+    }
 }
-
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
